@@ -45,7 +45,7 @@ export default {
         .then((user) => {
           console.log(user.data);
           alert("Logged in successfully");
-          router.push("/Feed");
+          router.push("/");
         })
         .catch((err) => {
           alert(err);

@@ -44,6 +44,8 @@
   </template>
   
   <script>
+  import firebase from 'firebase'
+
   export default {
     data() {
       return {
@@ -69,6 +71,14 @@
         console.log(profile); // Replace with your API call to create the profile
       },
     },
+    created() {
+    firebase.auth().onAuthStateChanged((user) => {
+      console.log("user : ",user);
+      if (!user) {
+        this.$router.push("/");
+      }
+    });
+  },
   };
   </script>
   

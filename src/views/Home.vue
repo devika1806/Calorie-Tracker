@@ -1,22 +1,42 @@
 <template>
   <div>
-    
-    <main>
-      <h1>Welcome to our Calorie Tracker!</h1>
-      <p>We know how important it is to keep track of your daily caloric intake, and that's why we've created this
-        easy-to-use tool to help you stay on track.</p>
-      <p>Simply enter your daily meals and snacks, and we'll keep a running tally of your calories consumed, so you can
-        make sure you're staying within your target range.</p>
-    </main>
+    <BeforeLogin v-if="!isLoggedInCheck"/>
+    <AfterLogin v-else />
   </div>
 </template>
 
 <script>
+import BeforeLogin from '@/components/BeforeLogin.vue'
+import AfterLogin from '@/components/AfterLogin.vue'
+import firebase from 'firebase'
+
 export default {
-  name: 'HomePage'
+  data() {
+    return {
+      isLoggedInCheck: false
+    }
+  },
+  components: {
+    BeforeLogin,
+    AfterLogin
+  },
+  created() {
+    console.log("created called");
+    firebase.auth().onAuthStateChanged((user) => {
+      console.log("inside firebase auth");
+      console.log("user : ",user);
+      if (user) {
+        // User is logged in
+        this.isLoggedInCheck = true;
+      } else {
+        // User is logged out
+        this.isLoggedInCheck = false;
+      }
+    });
+  },
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>
