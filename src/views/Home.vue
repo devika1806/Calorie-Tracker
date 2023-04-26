@@ -28,6 +28,7 @@ export default {
       if (user) {
         // User is logged in
         this.isLoggedInCheck = true;
+        console.log(user.data);
       } else {
         // User is logged out
         this.isLoggedInCheck = false;
