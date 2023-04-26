@@ -23,6 +23,11 @@ const routes = [
     path: '/profile',
     name: 'profile',
     component: () => import(/* webpackChunkName: "about" */ '../views/Profile.vue'),
+  },
+  {
+    path: '/water-tracker',
+    name: 'WaterTracker',
+    component: () => import('../views/WaterTracker.vue')
   }
 
 ]
