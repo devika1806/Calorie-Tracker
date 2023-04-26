@@ -44,7 +44,7 @@ export default {
         .signInWithEmailAndPassword(this.email, this.password)
         .then((user) => {
           console.log(user.data);
-          alert("Logged in successfully");
+          // alert("Logged in successfully");
           router.push("/");
         })
         .catch((err) => {
@@ -55,7 +55,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .login-container {
   display: flex;
   flex-direction: column;

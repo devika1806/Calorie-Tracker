@@ -9,9 +9,8 @@
       <h3 class="tagline">Track your calories, transform your health - Every calorie counts</h3>
       <p class="description">All you have to do is give us your basic information and we'll</p>
       <ul class="features">
-        <li>1. Keep a running tally of your calorie count</li>
-        <br>
-        <li>2. Ensure you stay within your target calorie range</li>
+        <li >1. Keep a running tally of your calorie count</li>
+        <li >2. Ensure you stay within your target calorie range</li>
       </ul>
     </main>
   </div>
@@ -23,12 +22,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
 .container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 .center-image {
@@ -42,7 +40,7 @@ export default {
 
 .tagline {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-top: 2rem;
 }
 
@@ -52,9 +50,11 @@ export default {
 }
 
 .features {
-  font-size: 1.2rem;
-  margin-top: 1rem;
+  font-size: 1rem;
+  margin: 0.7rem;
   padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 </style>
 
